@@ -11,7 +11,7 @@
     },
     "KII_ENDPOINT_URL": {
       "description": "Select an endpoint URL for your app, https://api.kii.com/api or https://api-jp.kii.com/api or https://api-cn2.kii.com/api or https://api-sg.kii.com/api",
-      "value": "<your-endpoint-url>"
+      "value": "<your-endpoint-url> (required)"
     },
     "KII_CLIENT_ID": {
       "description": "Client ID",
