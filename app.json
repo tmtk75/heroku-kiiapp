@@ -1,11 +1,25 @@
 {
   "name": "kiiapp",
   "env": {
-    "KII_APP_ID": "<your-app-id>",
-    "KII_APP_KEY": "<your-app-key>",
-    "KII_ENDPOINT": {
-      "description": "Select an endpoint for your app, https://api.kii.com/api or https://api-jp.kii.com/api or https://api-cn2.kii.com/api or https://api-sg.kii.com/api",
-      "value": "<your-endpoint>"
+    "KII_APP_ID": {
+      "description": "App ID",
+      "value": "<your-app-id> (required)"
+    },
+    "KII_APP_KEY": {
+      "description": "App Key",
+      "value": "<your-app-key> (required)"
+    },
+    "KII_ENDPOINT_URL": {
+      "description": "Select an endpoint URL for your app, https://api.kii.com/api or https://api-jp.kii.com/api or https://api-cn2.kii.com/api or https://api-sg.kii.com/api",
+      "value": "<your-endpoint-url>"
+    },
+    "KII_CLIENT_ID": {
+      "description": "Client ID",
+      "value": "<your-client-id> (optional)"
+    },
+    "KII_CLIENT_SECRET": {
+      "description": "Client Secret",
+      "value": "<your-client-secret> (optional)"
     }
   }
 }

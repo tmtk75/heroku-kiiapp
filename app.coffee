@@ -62,8 +62,8 @@ app.get "/index.html",     routes.html "index"
 kii = require 'node-KiiSDK'
 app_id = process.env["KII_APP_ID"]
 app_key = process.env['KII_APP_KEY']
-endpoint = process.env['KII_ENDPOINT']
-throw "either is missing for APP_ID, APP_KEY or ENDPOINT" if !app_id or !app_key or !endpoint
+endpoint = process.env['KII_ENDPOINT_URL']
+throw "either is missing for APP_ID, APP_KEY or ENDPOINT_URL" if !app_id or !app_key or !endpoint
 Kii.initializeWithSite app_id, app_key, endpoint
 app.get "/api", (req, res)->
   KiiUser.authenticate "tachikoma", "abc123",
