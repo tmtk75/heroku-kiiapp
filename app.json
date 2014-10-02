@@ -1,0 +1,7 @@
+{
+  "name": "kiiapp",
+  "env": {
+    "KII_APP_ID": "<your-app-id>",
+    "KII_APP_KEY": "<your-app-key>"
+  }
+}
