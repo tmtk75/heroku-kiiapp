@@ -2,6 +2,7 @@
   "name": "kiiapp",
   "env": {
     "KII_APP_ID": "<your-app-id>",
-    "KII_APP_KEY": "<your-app-key>"
+    "KII_APP_KEY": "<your-app-key>",
+    "KII_ENDPOINT": "https://[api|api-jp|api-cn|api-sg].kii.com/api"
   }
 }
