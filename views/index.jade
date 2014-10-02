@@ -1,0 +1,27 @@
+extends _layouts/default
+
+block _title
+  title A boilerplate
+
+block _styles
+  :stylus
+    .fa
+      font-size 24px
+
+block _content
+  h1 hi
+  .container
+    .row
+      .col-md-3.col-sm-6 node-kiiapp
+      .col-md-3.col-sm-6 boilerplate
+      .col-md-3.col-sm-6 #{version}
+      .col-md-3.col-sm-6
+        i.fa.fa-github
+        img(src="#{paths.images}/twitter_alt.png")
+
+block _footer
+  inculde _include/copyright
+
+block _scripts
+    :coffeescript
+      console.log "hello, hello, hello"

@@ -1,0 +1,6 @@
+node_modules
+*.swp
+views/static/*.css
+terraform.tfstate*
+.DS_Store
+destroy.tfstate

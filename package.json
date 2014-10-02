@@ -1,0 +1,22 @@
+{
+  "name": "heroku-kiiapp",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.10",
+    "npm": "1.4"
+  },
+  "dependencies": {
+    "coffee-script": "1.6.3",
+    "express": "3.1.2",
+    "jade": "0.28.2",
+    "stylus": "0.35.0",
+    "underscore": "1.5.2",
+    "nib": "1.0.1",
+    "connect-assets": "2.5.2",
+    "tmp": "*",
+    "node-KiiSDK": "git://github.com/tmtk75/node-KiiSDK.git#master"
+  },
+  "scripts": {
+    "start": "./app.coffee"
+  }
+}
