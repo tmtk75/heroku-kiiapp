@@ -4,7 +4,19 @@ jade    = require "jade"
 assets  = require "connect-assets"
 nib     = require "nib"
 fs      = require "fs"
-path    = require "path"
+
+handler_text = (req, res, next)->
+  if req.is 'text/*'
+    req.text = ''
+    req.setEncoding 'utf8'
+    req.on 'data', (chunk)-> req.text += chunk
+    req.on 'end', next
+  else
+    next()
+
+handler_404 = (req, res, next)->
+  res.status 404
+  res.render '404', req._parsedUrl
 
 app = express()
 app.set 'port', (process.env.PORT || 3000)
@@ -16,26 +28,14 @@ app.use express.methodOverride()
 app.use express.cookieParser (secret = 'adf19dfe1a4bbdd949326870e3997d799b758b9b')
 app.use express.session secret:secret
 app.use express.logger 'dev'
-app.use (req, res, next)->
-  if req.is 'text/*'
-    req.text = ''
-    req.setEncoding 'utf8'
-    req.on 'data', (chunk)-> req.text += chunk
-    req.on 'end', next
-  else
-    next()
-
+app.use handler_text
 app.use assets
-  paths: ['assets/js', 'assets/css', 'components'].map (e)->
-           path.join(__dirname, e)
+  paths: ['assets/js', 'assets/css', 'components'].map (e)-> "#{__dirname}/#{e}"
   buildDir: 'public/assets'
-
 app.use '/public', express.static "#{__dirname}/public"
 app.use app.router
 app.use express.favicon()
-app.use (req, res, next)->
-  res.status 404
-  res.render '404', req._parsedUrl
+app.use handler_404
 
 pkg = JSON.parse fs.readFileSync("package.json")
 ctx =
