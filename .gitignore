@@ -1,6 +1,7 @@
 node_modules
 *.swp
 views/static/*.css
+public/assets
 terraform.tfstate*
 .DS_Store
 destroy.tfstate

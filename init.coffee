@@ -39,11 +39,8 @@ app.use stylus.middleware
                .use(nib()).import('nib')
 
 app.use assets
-  paths: [
-    path.join(__dirname, 'assets/js'),
-    path.join(__dirname, 'assets/css'),
-    path.join(__dirname, 'components'),
-  ]
+  paths: ['assets/js', 'assets/css', 'components'].map (e)->
+           path.join(__dirname, e)
   buildDir: 'public/assets'
 
 
