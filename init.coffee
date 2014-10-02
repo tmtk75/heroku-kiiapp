@@ -6,11 +6,9 @@ nib     = require "nib"
 fs      = require "fs"
 path    = require "path"
 
-views_dir  = "#{__dirname}/views"
-
 app = express()
 app.set 'port', (process.env.PORT || 3000)
-app.set "views", views_dir
+app.set "views", "#{__dirname}/views"
 app.set "view engine", "jade"
 
 app.use express.bodyParser()
