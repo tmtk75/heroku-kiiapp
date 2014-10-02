@@ -4,7 +4,7 @@
     "KII_APP_ID": "<your-app-id>",
     "KII_APP_KEY": "<your-app-key>",
     "KII_ENDPOINT": {
-      "description": "https://api.kii.com/api or https://api-jp.kii.com/api or https://api-cn2.kii.com/api or https://api-sg.kii.com/api",
+      "description": "Select an endpoint for your app, https://api.kii.com/api or https://api-jp.kii.com/api or https://api-cn2.kii.com/api or https://api-sg.kii.com/api",
       "value": "<your-endpoint>"
     }
   }
