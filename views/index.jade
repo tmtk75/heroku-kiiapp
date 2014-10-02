@@ -4,6 +4,7 @@ block _title
   title A boilerplate
 
 block _styles
+  !=css("application")
   :stylus
     .fa
       font-size 24px
@@ -25,4 +26,4 @@ block _footer
 block _scripts
   :coffeescript
     console.log "hello, hello, hello"
-  !=js("assets")
+  !=js("application")
