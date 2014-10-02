@@ -40,8 +40,6 @@ app.use handler_404
 pkg = JSON.parse fs.readFileSync("package.json")
 ctx =
   version: pkg.version
-  paths:
-    images: "public/images"
 routes = require("./routes") ctx
 app.get "/",               routes.html "index"
 app.get "/index.html",     routes.html "index"
