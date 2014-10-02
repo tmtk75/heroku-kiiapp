@@ -5,6 +5,7 @@ assets  = require "connect-assets"
 stylus  = require "stylus"
 nib     = require "nib"
 fs      = require "fs"
+path    = require "path"
 
 views_dir  = "#{__dirname}/views"
 static_dir = "#{views_dir}/static"
@@ -37,7 +38,14 @@ app.use stylus.middleware
                .set('compress', true)
                .use(nib()).import('nib')
 
-app.use assets src:"lib"
+app.use assets
+  paths: [
+    path.join(__dirname, 'assets/js'),
+    path.join(__dirname, 'assets/css'),
+    path.join(__dirname, 'components'),
+  ]
+  buildDir: 'public/assets'
+
 
 app.use '/public', express.static "#{__dirname}/public"
 app.use '/',       express.static static_dir

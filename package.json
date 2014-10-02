@@ -12,7 +12,7 @@
     "stylus": "0.35.0",
     "underscore": "1.5.2",
     "nib": "1.0.1",
-    "connect-assets": "2.5.2",
+    "connect-assets": "3.0.1",
     "tmp": "*",
     "node-KiiSDK": "git://github.com/tmtk75/node-KiiSDK.git#master"
   },
