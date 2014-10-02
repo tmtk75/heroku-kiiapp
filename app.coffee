@@ -1,5 +1,5 @@
 #!/usr/bin/env coffee
-app = require("./init")
+app = require("./init.coffee")
 
 ##
 kii = require 'node-KiiSDK'
