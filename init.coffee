@@ -56,4 +56,8 @@ routes = require("./routes") ctx
 app.get "/",               routes.html "index"
 app.get "/index.html",     routes.html "index"
 
-module.exports = app
+module.exports = (callback)->
+  callback app
+  require('http').createServer(app).listen app.get('port'), ->
+    console.log "Express server listening on port #{app.get('port')}"
+
