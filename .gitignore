@@ -5,3 +5,4 @@ public/assets
 terraform.tfstate*
 .DS_Store
 destroy.tfstate
+.keys

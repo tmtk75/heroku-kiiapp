@@ -1,8 +1,5 @@
 extends _layouts/default
 
-block _title
-  title A boilerplate
-
 block _styles
   !=css("application")
   :stylus
@@ -12,18 +9,23 @@ block _styles
 block _content
   h1 hi
   .container
+    // see http://getbootstrap.com/css/#grid-options
+    // xs <  768px
+    // sm >= 768px
+    // md >= 992px
+    // lg >= 1200px
     .row
-      .col-md-3.col-sm-6 node-kiiapp
-      .col-md-3.col-sm-6 boilerplate
-      .col-md-3.col-sm-6 #{version}
-      .col-md-3.col-sm-6
+      .col-sm-6.col-md-3 node-kiiapp
+      .col-sm-6.col-md-3 boilerplate
+      .col-sm-6.col-md-3 #{version}
+      .col-sm-6.col-md-3
         i.fa.fa-github
         img(src="/public/images/twitter_alt.png")
 
-block _footer
-  include _includes/copyright
 
 block _scripts
+
+  !=js("application")
+
   :coffeescript
     console.log "hello, hello, hello"
-  !=js("application")

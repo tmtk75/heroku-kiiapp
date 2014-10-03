@@ -1,10 +1,10 @@
-doctype 5
+doctype html
 html(lang="en")
 
   head
     meta(charset='utf-8')
     meta(name="viewport", content="width=device-width,initial-scale=1.0")
-    block _title
+    title A boilerplate
 
     link(rel='stylesheet', href="/common.css")
     block _styles
@@ -13,7 +13,7 @@ html(lang="en")
 
     block _content
 
-    block _footer
+    include ../_includes/copyright
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js")

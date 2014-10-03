@@ -5,7 +5,7 @@ require("./init.coffee") (app)->
   app_id   = process.env["KII_APP_ID"]
   app_key  = process.env['KII_APP_KEY']
   endpoint = process.env['KII_ENDPOINT_URL']
-  throw "either is missing for APP_ID, APP_KEY or ENDPOINT_URL" if !app_id or !app_key or !endpoint
+  throw "either is missing for KII_APP_ID, KII_APP_KEY or KII_ENDPOINT_URL" if !app_id or !app_key or !endpoint
   Kii.initializeWithSite app_id, app_key, endpoint
 
   app.get "/api", (req, res)->
