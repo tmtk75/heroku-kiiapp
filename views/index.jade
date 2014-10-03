@@ -4,9 +4,10 @@ block _styles
   :stylus
     .fa
       font-size 24px
+    body
+      margin 4rem 8rem
 
 block _content
-  h1 hi
   .container
     // see http://getbootstrap.com/css/#grid-options
     // xs <  768px
@@ -14,12 +15,19 @@ block _content
     // md >= 992px
     // lg >= 1200px
     .row
+      .col-sm-12.col-md-12
+        h1 hi
+    .row
       .col-sm-6.col-md-3 node-kiiapp
       .col-sm-6.col-md-3 boilerplate
       .col-sm-6.col-md-3 #{version}
       .col-sm-6.col-md-3
         i.fa.fa-github
         img(src="/public/images/twitter_alt.png")
+
+    .row
+      .col-sm-12.col-md-12
+        include ./_includes/copyright
 
 
 block _scripts
