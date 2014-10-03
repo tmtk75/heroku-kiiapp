@@ -1,12 +1,15 @@
 doctype html
+
 html(lang="en")
 
   head
     meta(charset='utf-8')
     meta(name="viewport", content="width=device-width,initial-scale=1.0")
+
     title A boilerplate
 
-    link(rel='stylesheet', href="/common.css")
+    !=css("application")    // assets/css/application.styl
+
     block _styles
 
   body
@@ -19,4 +22,8 @@ html(lang="en")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
     script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
     script(src='//knockoutjs.com/downloads/knockout-3.0.0.js')
+
+    !=js("application")    // assets/js/application.coffee
+
     block _scripts
+
