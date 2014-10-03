@@ -1,6 +1,7 @@
 #!/usr/bin/env coffee
 express = require "express"
 jade    = require "jade"
+stylus  = require "stylus"
 assets  = require "connect-assets"
 nib     = require "nib"
 fs      = require "fs"
