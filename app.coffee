@@ -1,4 +1,10 @@
 #!/usr/bin/env coffee
+fs = require "fs"
+
+pkg = JSON.parse fs.readFileSync("package.json")
+global.ctx =
+  version: pkg.version
+
 require("./init.coffee") (app)->
   ##
   kii = require 'node-KiiSDK'
@@ -14,4 +20,11 @@ require("./init.coffee") (app)->
         res.send "Success: #{JSON.stringify(u)}"
       failure: ->
         res.send "Failed to authenticate: #{JSON.stringify(arguments)}"
+
+  logged_in = (req, res, next)->
+    next()
+
+  routes = require "./routes"
+  app.get "/", logged_in, routes.index
+  app.get '/login', routes.login
 

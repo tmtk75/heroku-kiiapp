@@ -4,7 +4,6 @@ jade    = require "jade"
 stylus  = require "stylus"
 assets  = require "connect-assets"
 nib     = require "nib"
-fs      = require "fs"
 
 handler_text = (req, res, next)->
   if req.is 'text/*'
@@ -37,13 +36,6 @@ app.use '/public', express.static "#{__dirname}/public"
 app.use app.router
 app.use express.favicon()
 app.use handler_404
-
-pkg = JSON.parse fs.readFileSync("package.json")
-ctx =
-  version: pkg.version
-routes = require("./routes") ctx
-app.get "/",               routes.html "index"
-app.get "/index.html",     routes.html "index"
 
 module.exports = (callback)->
   callback app
