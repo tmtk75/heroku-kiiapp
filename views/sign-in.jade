@@ -3,10 +3,26 @@ extends _layouts/default
 block _content
   .container
     .row
-      .col-xs-8.col-sm-6.col-md-3
-        =error
-      .col-xs-8.col-sm-6.col-md-3
-        form.role(action='/sign-in')
-          input.form-control(name='username', id='username', placeholder='Username', value="tachikoma")
-          input.form-control(name='password', id='password', placeholder='Password', value="abc123")
+      col-sm-12.col-md-12
+        =session.error
+    hr
+    .row
+      col-sm-12.col-md-12
+        form.role.form-inline(action='/sign-in')
+          input.form-control(name='username', id='username', placeholder='Username')
+          input.form-control(name='password', id='password', placeholder='Password')
           button.btn.btn-default(type='submit') Sign-in
+    hr
+    .row
+      col-sm-12.col-md-12
+        form.role.form-inline(action='/sign-up')
+          input.form-control(name='username', id='username', placeholder='Username')
+          input.form-control(name='password', id='password', placeholder='Password')
+          button.btn.btn-default(type='submit') Sign-up
+
+    hr
+    .row
+      a(href="https://developer.kii.com") https://developer.kii.com
+      div app_id: #{ctx.app_id}
+      div app_key: #{ctx.app_key}
+      div endpoint_url: #{ctx.endpoint_url}
