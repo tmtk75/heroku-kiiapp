@@ -29,7 +29,7 @@ app.use assets
   buildDir: 'public/assets'
 app.use '/public', express.static "#{__dirname}/public"
 app.use (req, res, next)->
-  res.locals.session = req.session if req.session
+  res.locals.session = req.session
   next()
 app.use express.methodOverride()
 app.use app.router
