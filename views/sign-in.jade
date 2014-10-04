@@ -1,0 +1,12 @@
+extends _layouts/default 
+
+block _content
+  .container
+    .row
+      .col-xs-8.col-sm-6.col-md-3
+        =error
+      .col-xs-8.col-sm-6.col-md-3
+        form.role(action='/sign-in')
+          input.form-control(name='username', id='username', placeholder='Username', value="tachikoma")
+          input.form-control(name='password', id='password', placeholder='Password', value="abc123")
+          button.btn.btn-default(type='submit') Sign-in
