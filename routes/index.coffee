@@ -5,3 +5,4 @@ module.exports =
 
   login: (req, res, next)->
     res.render "login", global.ctx
+

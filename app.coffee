@@ -22,7 +22,10 @@ require("./init.coffee") (app)->
         res.send "Failed to authenticate: #{JSON.stringify(arguments)}"
 
   logged_in = (req, res, next)->
-    next()
+    if req.session.email
+      next()
+    else
+      res.redirect("/login")
 
   routes = require "./routes"
   app.get "/", logged_in, routes.index
