@@ -16,14 +16,15 @@ block _content
     // lg >= 1200px
     .row
       .col-sm-12.col-md-12
-        h1 hi
+        h1 node-KiiApp boilerplate #{version}
     .row
-      .col-sm-6.col-md-3 node-kiiapp
-      .col-sm-6.col-md-3 boilerplate
-      .col-sm-6.col-md-3 #{version}
+      .col-sm-6.col-md-3 Hello, #{session.user.name}
       .col-sm-6.col-md-3
         i.fa.fa-github
         img(src="/public/images/twitter_alt.png")
+      .col-sm-6.col-md-3
+        form(action="/sign-out")
+          button.btn.btn-default Sign-out
 
     .row
       .col-sm-12.col-md-12
